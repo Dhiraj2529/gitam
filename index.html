@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gitam is a static music player project built with HTML, CSS and JavaScript.">
+    <title>Gitam | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark" data-page="home">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <p class="eyebrow">Project 2</p>
+            <h1>Gitam</h1>
+        </div>
+
+        <button class="sidebar-toggle" id="slidebtn" type="button" onclick="slidebar()" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="sidebar-nav">
+            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link" href="liked.html">Liked Songs</a>
+            <a class="nav-link" href="upload.html">Upload</a>
+            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="signup.html">Sign Up</a>
+        </nav>
+    </aside>
+
+    <div class="page-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Welcome back</p>
+                <h2 id="user">Hello, Listener</h2>
+            </div>
+            <div class="topbar-actions">
+                <a class="ghost-link" href="liked.html">Open likes</a>
+                <button id="themebtn" class="theme-btn" type="button" onclick="toggleTheme()">Light mode</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-card">
+                <div>
+                    <p class="eyebrow">Alan Walker Collection</p>
+                    <h3>Play your playlist with a cleaner finish.</h3>
+                    <p class="hero-copy">
+                        Browse tracks, like favorites, continue playback from the bottom player, and publish the project as a static site without broken links.
+                    </p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span id="song-count">6</span>
+                        <small>Total songs</small>
+                    </div>
+                    <div class="stat">
+                        <span id="liked-count-home">0</span>
+                        <small>Liked tracks</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-head">
+                <div>
+                    <p class="eyebrow">Library</p>
+                    <h3>Now available</h3>
+                </div>
+                <p class="muted">Everything below uses repo-safe relative paths, so GitHub Pages can serve it correctly.</p>
+            </section>
+
+            <section id="home" class="song-grid" aria-live="polite"></section>
+        </main>
+    </div>
+
+    <div class="player">
+        <div class="player-meta">
+            <p class="eyebrow">Now playing</p>
+            <strong id="title">No song selected</strong>
+        </div>
+        <input type="range" id="progress" min="0" max="100" value="0" aria-label="Song progress">
+        <div class="player-controls">
+             <button type="button" onclick="prev()">⏮️</button>
+            <button type="button" onclick="togglePlay()">▶️/⏸️</button>
+            <button type="button" onclick="next()">⏭️</button>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="1" aria-label="Volume">
+        </div>
+    </div>
+
+    <audio id="audio"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

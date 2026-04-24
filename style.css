@@ -1,0 +1,524 @@
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 800px;
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    transition: 0.3s;
+}
+
+/*---------NAVBAR------------ */
+#navbar{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    background: linear-gradient(brown, #121212);
+}
+
+#navbar label{
+    font-size: 1.5em;
+    border: none;
+    border-radius: 50%;
+}
+
+/* -------------THEMES --------------*/
+body.dark,
+body.theme-dark {
+    background: no-repeat;
+    background: linear-gradient(180deg, #181818 80%, #0c349a75);
+    background-attachment: fixed;
+    color: white;
+}
+
+body.light,
+body.theme-light {
+    background: linear-gradient(120deg, rgb(136, 232, 136) 0.5%, #e9c8c8, #60e4f0);
+    color: black;
+}
+
+/* ----------SIDEBAR---------- */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #1a1a2e;
+    overflow-x: hidden;
+    transition: 0.3s;
+    color: white;
+    z-index: 30;
+}
+
+.sidebar.is-collapsed {
+    width: 0px;
+}
+
+#slidebtn,
+.sidebar-toggle {
+    position: fixed;
+    top: 40px;
+    left: 0px;
+    transition: 0.3s;
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 0px 10px 0px 10px;
+    z-index: 40;
+}
+
+.sidebar-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 40;
+}
+
+.sidebar-toggle span {
+    display: block;
+    width: 16px;
+    height: 2px;
+    background: white;
+}
+
+.sidebar h2,
+.sidebar nav {
+    white-space: nowrap;
+}
+
+.sidebar nav,
+.sidebar-nav{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar a,
+.nav-link {
+    padding: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.sidebar a:hover,
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255,255,255,0.1);
+}
+
+/* MAIN */
+.main {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: linear-gradient(rgb(1, 1, 52), rgba(255, 255, 255, 0.69), rgb(95, 95, 231));
+    padding: 0.8em;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* PLAYER */
+.player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+}
+
+/* PROGRESS BAR */
+#progress {
+    width: 100%;
+}
+
+/* AUTH */
+.center {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-box {
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+button{
+    color: white;
+    background: black;
+    border: none;
+    padding: 0.5em;
+    border-radius: 50%;
+}
+
+button:hover{
+    background: #2e2d2d;
+    color: red;
+}
+
+/* ---- Added only to support the polished layout while keeping your original colors ---- */
+a {
+    color: inherit;
+}
+
+input {
+    font: inherit;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.page-shell {
+    margin-left: 240px;
+    padding: 24px 24px 120px 24px;
+}
+
+.page-shell.is-expanded {
+    margin-left: 70px;
+    padding-left: 24px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.brand-block {
+    padding: 90px 16px 20px 16px;
+}
+
+.brand-block h1 {
+    margin: 8px 0;
+}
+
+.eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e9c8c8;
+}
+
+.muted,
+.hero-copy,
+.song-body p,
+.liked-row p,
+.auth-card label,
+.form-grid label,
+.form-message {
+    color: inherit;
+    opacity: 0.85;
+}
+
+.main-content {
+    display: grid;
+    gap: 24px;
+}
+
+.hero-card,
+.upload-card,
+.auth-card,
+.auth-panel,
+.not-found-card {
+    background: rgba(0,0,0,0.45);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.hero-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+}
+
+.hero-card h3,
+.upload-card h3,
+.auth-panel h1 {
+    margin: 8px 0 12px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    min-width: 120px;
+    padding: 14px 18px;
+    border-radius: 15px;
+    background: linear-gradient(rgb(1, 1, 52), rgba(255, 255, 255, 0.35), rgb(95, 95, 231));
+}
+
+.stat span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 16px;
+}
+
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.song-card,
+.liked-row {
+    background: linear-gradient(rgb(1, 1, 52), rgba(255, 255, 255, 0.69), rgb(95, 95, 231));
+    padding: 0.8em;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.song-card:hover,
+.liked-row:hover {
+    transform: scale(1.02);
+}
+
+.song-card img,
+.liked-row img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.song-body {
+    padding-top: 12px;
+}
+
+.card-actions,
+.row-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card-btn,
+.text-btn,
+.ghost-link,
+.theme-btn,
+.primary-btn,
+.primary-link {
+    color: white;
+    background: black;
+    border: none;
+    padding: 0.7em 1em;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.card-btn:hover,
+.text-btn:hover,
+.ghost-link:hover,
+.theme-btn:hover,
+.primary-btn:hover,
+.primary-link:hover {
+    background: #2e2d2d;
+    color: red;
+}
+
+.like-btn.is-liked {
+    background: #2e2d2d;
+    color: red;
+}
+
+.liked-list {
+    display: grid;
+    gap: 16px;
+}
+
+.liked-row {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 16px;
+    align-items: center;
+}
+
+.liked-row img {
+    height: 90px;
+    object-fit: cover;
+}
+
+.empty-state {
+    background: rgba(0,0,0,0.35);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.player-meta {
+    margin-bottom: 8px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#volume {
+    width: 140px;
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.auth-layout {
+    width: min(1000px, 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.auth-card {
+    display: grid;
+    gap: 12px;
+}
+
+.auth-card input,
+.form-grid input {
+    background: #0000005c;
+    padding: 0.8em;
+    border-radius: 1em;
+    color: inherit;
+    border: 1px solid rgba(255,255,255,0.18);
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.upload-card {
+    max-width: 720px;
+}
+
+.not-found {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.not-found-card {
+    max-width: 640px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .auth-layout,
+    .hero-card,
+    .section-head,
+    .topbar {
+        grid-template-columns: 1fr;
+        display: grid;
+    }
+
+    .page-shell {
+        margin-left: 240px;
+        padding: 20px 16px 120px 16px;
+    }
+
+    .page-shell.is-expanded {
+        margin-left: 70px;
+        padding-left: 16px;
+    }
+}
+
+@media (max-width: 760px) {
+    .page-shell,
+    .page-shell.is-expanded {
+        margin-left: 0;
+        padding: 90px 14px 120px 14px;
+    }
+
+    .sidebar {
+        width: 220px;
+        transform: translateX(-220px);
+    }
+
+    .sidebar.is-collapsed {
+        width: 220px;
+    }
+
+    .sidebar.is-open {
+        transform: translateX(0);
+    }
+
+    .liked-row {
+        grid-template-columns: 1fr;
+    }
+
+    .song-grid {
+        grid-template-columns: 1fr;
+    }
+}

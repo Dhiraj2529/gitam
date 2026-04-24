@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitam | Liked Songs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark" data-page="liked">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <p class="eyebrow">Your collection</p>
+            <h1>Liked Songs</h1>
+            <p class="muted">Everything you hearted shows up here instantly.</p>
+        </div>
+
+        <button class="sidebar-toggle" id="slidebtn" type="button" onclick="slidebar()" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="sidebar-nav">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="liked.html">Liked Songs</a>
+            <a class="nav-link" href="upload.html">Upload</a>
+            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="signup.html">Sign Up</a>
+        </nav>
+    </aside>
+
+    <div class="page-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Saved for later</p>
+                <h2 id="user">Hello, Listener</h2>
+            </div>
+            <div class="topbar-actions">
+                <a class="ghost-link" href="index.html">Back home</a>
+                <button id="themebtn" class="theme-btn" type="button" onclick="toggleTheme()">Light mode</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="hero-card compact">
+                <div>
+                    <p class="eyebrow">Favorites</p>
+                    <h3>Only the tracks you liked.</h3>
+                    <p class="hero-copy">Remove songs from here or tap any row to play it in the shared bottom player.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span id="liked-page-count">0</span>
+                        <small>Saved tracks</small>
+                    </div>
+                </div>
+            </section>
+
+            <section id="empty-state" class="empty-state hidden">
+                <h3>No liked songs yet</h3>
+                <p>Go back to the home page and tap the heart on any song.</p>
+                <a class="primary-link" href="index.html">Browse songs</a>
+            </section>
+
+            <section id="liked-list" class="liked-list" aria-live="polite"></section>
+        </main>
+    </div>
+
+    <div class="player">
+        <div class="player-meta">
+            <p class="eyebrow">Now playing</p>
+            <strong id="title">No song selected</strong>
+        </div>
+        <input type="range" id="progress" min="0" max="100" value="0" aria-label="Song progress">
+        <div class="player-controls">
+            <button type="button" onclick="prev()">⏮️</button>
+            <button type="button" onclick="togglePlay()">▶️/⏸️</button>
+            <button type="button" onclick="next()">⏭️</button>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="1" aria-label="Volume">
+        </div>
+    </div>
+
+    <audio id="audio"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
